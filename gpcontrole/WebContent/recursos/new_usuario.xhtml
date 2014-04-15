@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:piva="http://piva.com/facelets">
+
+	<h:head>
+		<title><h:outputText value="Gestão de pessoa"/></title>
+	</h:head>
+	<h:body>
+		<h:form id="formIndex">
+			<p:panel id="panel" header="Cadastro de novo Gestão de pessoa">
+			<p:messages style="color: red" showDetail="true" />
+				<h:panelGrid columns="2" cellpadding="3">
+
+					<h:outputLabel id="lblname" value="Nome:" />
+					<p:inputText size="25" id="txtname" autocomplete="false" title="Informe o nome do Usuario" value="#{mb_Usuario.usuario.name}" />
+
+					<h:outputLabel id="lblcpf" value="CPF:" />
+					<p:inputText size="14" id="txtcpf" autocomplete="false" title="null" value="#{mb_Usuario.usuario.cpf}" />
+
+					<h:outputLabel id="lblsnAtivo" value="Ativo:" />
+					<p:selectOneMenu value="#{mb_Usuario.usuario.snAtivo}" effect="fade">
+						<f:selectItem itemLabel="Sim" itemValue="true" />
+						<f:selectItem itemLabel="Não" itemValue="false" />
+					</p:selectOneMenu>
+
+					<h:outputLabel id="lbldtCadastro" value="Data de Cadastro:" />
+					<p:calendar value="#{mb_Usuario.usuario.dtCadastro}" id="txtdtCadastro" pattern="dd/MM/yyyy" showOn="button"/>
+
+					<h:outputLabel id="lblfuncTion" value="Função:" />
+					<p:selectOneMenu value="#{mb_Usuario.idFunction}" effect="fade">
+						<f:selectItem itemLabel="Selecione um" itemValue="0" />
+						<f:selectItems value="#{mb_Function.functionList}" var="function" itemLabel="#{function.description}" itemValue="#{function.id}"/>
+					</p:selectOneMenu>
+
+					<h:outputLabel id="lbldepartamento" value="Departamento:" />
+					<p:selectOneMenu value="#{mb_Usuario.idDepartamento}" effect="fade">
+						<f:selectItem itemLabel="Selecione um" itemValue="0" />
+						<f:selectItems value="#{mb_Departamento.departamentoList}" var="departamento" itemLabel="#{departamento.description}" itemValue="#{departamento.id}"/>
+					</p:selectOneMenu>
+
+					<h:outputLabel id="lblemail" value="E-mail:" />
+					<p:inputText size="25" id="txtemail" autocomplete="false" title="Informe o email" value="#{mb_Usuario.usuario.email}" />
+
+					<h:outputLabel id="lbllogin" value="Login:" />
+					<p:inputText size="15" id="txtlogin" autocomplete="false" title="Informe o Login" value="#{mb_Usuario.usuario.login}" />
+
+					<h:outputLabel id="lblpassword" value="Password:" />
+					<p:inputText size="15" id="txtpassword" autocomplete="false" title="Informe o Password" value="#{mb_Usuario.usuario.password}" />
+
+				</h:panelGrid>
+			<p:commandButton value="Salvar" update="panel" actionListener="#{mb_Usuario.insertUsuario()}" id="btnSalvar" />
+			</p:panel>
+		</h:form>
+	</h:body>
+</html>

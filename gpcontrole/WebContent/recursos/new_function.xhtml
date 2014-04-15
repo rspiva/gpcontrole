@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+		<title><h:outputText value="Função"/></title>
+	</h:head>
+	<h:body>
+		<h:form id="formIndex">
+			<p:panel id="panel" header="Cadastro de nova função">
+			<p:messages style="color: red" showDetail="true" />
+				<h:panelGrid columns="2" cellpadding="3">
+
+					<h:outputLabel id="lbldescription" value="Descrição:" />
+					<p:inputText size="25" id="txtdescription" autocomplete="false" title="Descrição da Função" value="#{mb_Function.function.description}" />
+
+				</h:panelGrid>
+			<p:commandButton value="Salvar" update="panel" actionListener="#{mb_Function.insertFunction()}" id="btnSalvar" />
+			</p:panel>
+		</h:form>
+	</h:body>
+</html>
