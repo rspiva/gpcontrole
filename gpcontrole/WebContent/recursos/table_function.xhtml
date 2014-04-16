@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+		<title><h:outputText value="Função"/></title>
+		<h:outputStylesheet library="css" name="portal.css"/>
+	</h:head>
+	<h:body>
+		<h:form id="formgeral">
+			<p:growl id="msgs" showDetail="true" />
+			<p:menubar>
+				<p:submenu label="Arquivo" icon="ui-icon-document">
+					<p:menuitem value="Novo" onclick="javascript:abritela('recursos/new_function.jsf');" icon="ui-icon-contact"/>
+				</p:submenu>
+			</p:menubar>
+			<p:dataTable  id="dataTable" var="dados" value="#{mb_Function.findAll}"
+				paginator="true" rows="15"
+				styleClass="orders"
+				rowStyleClass="oddLinha, evenLinha">
+				<p:column sortBy="#{dados.id}" headerText="Id">
+					<h:outputText value="#{dados.id}"></h:outputText>
+				</p:column>
+				<p:column sortBy="#{description}" headerText="Descrição">
+					<h:outputText value="#{dados.description}"></h:outputText>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</h:body>
+</html>
