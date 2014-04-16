@@ -5,13 +5,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import br.com.jpiva.controller.system.DAO;
 import br.com.jpiva.model.recursos.Function;
 
 @ManagedBean(name = "mb_Function")
-@SessionScoped
+@RequestScoped
 public class FunctionController extends DAO<Function>{
 
 	private List<Function> findAll;

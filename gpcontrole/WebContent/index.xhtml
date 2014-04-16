@@ -9,11 +9,12 @@
 
  
 <h:head>
+	
 	<title><h:outputText value="Portal Nova Era" /></title>
 	<f:loadBundle basename="br.com.jpiva.controller.messages.pt_txt" var="msg" />
 </h:head>
 <h:body>
-<h:form id="formIndex">
+<h:form id="formIndex" action="${request.contextPath}/j_spring_security_check">
 
 			<p:panel id="panel" header="#{msg.acessoPortal}">
 		

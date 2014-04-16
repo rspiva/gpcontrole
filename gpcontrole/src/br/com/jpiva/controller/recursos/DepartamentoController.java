@@ -4,13 +4,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import br.com.jpiva.controller.system.DAO;
 import br.com.jpiva.model.recursos.Departamento;
 
 @ManagedBean(name = "mb_Departamento")
-@SessionScoped
+@RequestScoped
 public class DepartamentoController extends DAO<Departamento>{
 
 	private List<Departamento> findAll;

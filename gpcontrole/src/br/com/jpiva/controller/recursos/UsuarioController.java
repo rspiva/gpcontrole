@@ -5,6 +5,7 @@ import java.util.*;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import org.hibernate.Criteria;
@@ -16,7 +17,7 @@ import br.com.jpiva.controller.system.DAO;
 import br.com.jpiva.model.recursos.Usuario;
 
 @ManagedBean(name = "mb_Usuario")
-@SessionScoped
+@RequestScoped
 public class UsuarioController extends DAO<Usuario>{
 
 	private List<Usuario> findAll;
