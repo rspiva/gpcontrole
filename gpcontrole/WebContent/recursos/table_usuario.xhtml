@@ -25,25 +25,25 @@
 				<p:column sortBy="#{dados.id}" headerText="Id">
 					<h:outputText value="#{dados.id}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{name}" headerText="Nome">
+				<p:column sortBy="#{dados.name}" headerText="Nome">
 					<h:outputText value="#{dados.name}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{cpf}" headerText="CPF">
+				<p:column sortBy="#{dados.cpf}" headerText="CPF">
 					<h:outputText value="#{dados.cpf}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{function}}" headerText="Função">
+				<p:column sortBy="#{dados.function.description}}" headerText="Função">
 					<h:outputText value="#{dados.function.description}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{departamento}" headerText="Departamento">
+				<p:column sortBy="#{dados.departamento.description}" headerText="Departamento">
 					<h:outputText value="#{dados.departamento.description}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{email}" headerText="E-mail">
+				<p:column sortBy="#{dados.email}" headerText="E-mail">
 					<h:outputText value="#{dados.email}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{login}" headerText="Login">
+				<p:column sortBy="#{dados.login}" headerText="Login">
 					<h:outputText value="#{dados.login}"></h:outputText>
 				</p:column>
-				<p:column sortBy="#{password}" headerText="Password">
+				<p:column sortBy="#{dados.password}" headerText="Password">
 					<h:outputText value="#{dados.password}"></h:outputText>
 				</p:column>
 			</p:dataTable>

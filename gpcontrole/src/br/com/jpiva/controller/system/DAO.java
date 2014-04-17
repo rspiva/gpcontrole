@@ -30,6 +30,7 @@ public class DAO<T> {
 	        transaction.commit();
 		}catch(Throwable e){
 			System.out.println("Erro na operação de busca" + e.getMessage());
+			GravaLog.setGravaLog("DAO", "insertObject", "Linha: 33 - ERRO na operação de busca" + e.getMessage());
 			transaction.rollback();
 		}finally{
 			session.close();
@@ -48,6 +49,7 @@ public class DAO<T> {
 	        return obj;
 		}catch(Throwable e){
 			System.out.println("Erro na operação de busca" + e.getMessage());
+			GravaLog.setGravaLog("DAO", "getObjectList", "Linha: 52 - ERRO na operação de busca" + e.getMessage());
 			transaction.rollback();
 		}finally{
 			session.close();
@@ -56,8 +58,7 @@ public class DAO<T> {
 	}
 	
 	public Object getObjectId(T obj, String campo, int id){
-		
-		
+				
         Session session = sf.openSession();
         Transaction transaction = session.beginTransaction();
 		
@@ -70,10 +71,14 @@ public class DAO<T> {
 			
 		}catch(Throwable e){
 			System.out.println("Erro na operação de busca" + e.getMessage());
+			GravaLog.setGravaLog("DAO", "getObjectId", "Linha: 74 - ERRO na operação de busca" + e.getMessage());
 			transaction.rollback();
 		}finally{
 			session.close();
 		}
      	return obj;
 	}
+	
+	
+	
 }

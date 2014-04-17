@@ -13,16 +13,16 @@ and open the template in the editor.
         
         
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        
+         <!-- 
         <property name="hibernate.connection.url">jdbc:mysql://mysql-rspiva.jelasticlw.com.br/gpcontrole</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">uL8gpVZArn</property>
         
-        <!-- 
+        -->
         <property name="hibernate.connection.url">jdbc:mysql://localhost/gpcontrole</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"> </property>
-        -->
+        
         <property name="connection.pool_size">1</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="current_session_context_class">thread</property>
